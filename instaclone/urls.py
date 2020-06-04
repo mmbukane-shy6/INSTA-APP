@@ -11,6 +11,8 @@ urlpatterns=[
     url(r'^accounts/profile/(\d+)', views.profile, name = 'profile'),
     url(r'^new/post/', views.new_post, name = 'new-post'),
     url(r'^accounts/edit-profile/', views.edit_profile, name = 'edit-profile'),
+    url(r'^tinymce/', include('tinymce.urls')),
+
 
 
 ]

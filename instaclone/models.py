@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from tinymce.models import HTMLField
+
 
 # Create your models here.
 Gender=(
@@ -112,3 +114,7 @@ def __str__(self):
 
 def save_like(self):
     self.save()
+class Article(models.Model):
+    title = models.CharField(max_length=60)
+    post = HTMLField()
+    editor = models.ForeignKey(User,on_delete=models.CASCADE)   
